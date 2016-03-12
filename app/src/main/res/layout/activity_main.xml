@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_array_button"
-        android:id="@+id/buttonNewArray"
+        android:id="@+id/buttonReCreate"
         android:layout_below="@+id/labelSize"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -55,21 +55,21 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/delete_label"
-        android:id="@+id/labelDeletePosition"
-        android:layout_below="@+id/buttonNewArray"
+        android:id="@+id/labelPosition"
+        android:layout_below="@+id/buttonReCreate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:gravity="center"
-        android:layout_alignBottom="@+id/editDeletePosition" />
+        android:layout_alignBottom="@+id/editPosition" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editDeletePosition"
-        android:layout_below="@+id/buttonNewArray"
-        android:layout_toRightOf="@+id/labelDeletePosition"
+        android:id="@+id/editPosition"
+        android:layout_below="@+id/buttonReCreate"
+        android:layout_toRightOf="@+id/labelPosition"
         android:layout_alignRight="@+id/editSize"
         android:layout_alignEnd="@+id/editSize"
         android:imeOptions="actionDone" />
@@ -78,19 +78,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/delete_button"
-        android:id="@+id/buttonDeletePosition"
-        android:layout_below="@+id/labelDeletePosition"
+        android:id="@+id/buttonRemoveElement"
+        android:layout_below="@+id/labelPosition"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:onClick="removeElementClick" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
-        android:layout_below="@+id/buttonDeletePosition"
+        android:layout_below="@+id/buttonRemoveElement"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"

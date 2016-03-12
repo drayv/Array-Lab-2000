@@ -23,6 +23,25 @@ public class ArrayLab {
     }
 
     /**
+     * Возвращает массив, удалив из исходного элемент по указанному порядковому номеру.
+     *
+     * @param originalArray Исходный массив.
+     * @param elementPosition Порядковый номер элемента который необходимо удалить.
+     * @return Новый массив, размера на -1 от размера исходного,
+     * содержащий все исходные элементы кроме обозначенного к удалению.
+     */
+    public static int[] removeElement(int[] originalArray, int elementPosition){
+        --elementPosition;
+        int[] newArray = new int[originalArray.length - 1];
+
+        System.arraycopy(originalArray, 0, newArray, 0, elementPosition);
+        System.arraycopy(originalArray, elementPosition + 1, newArray,
+                elementPosition, originalArray.length - elementPosition-1);
+
+        return newArray;
+    }
+
+    /**
      * Создает текстовое представление массива int-ов по его содержимому.
      *
      * @param array Массив int-ов для представления.
