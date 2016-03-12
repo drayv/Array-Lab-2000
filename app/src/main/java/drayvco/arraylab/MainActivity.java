@@ -10,26 +10,26 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int _arrayMinSize = 1;      // Минимальный размер массива.
-    private int _arrayMaxSize = 9999;   // Максимальный размер массива.
-    private int _arrayMinimum = 0;      // Минимальное значение случайного числа в массиве.
-    private int _arrayMaximum = 999;    // Максимальный значение случайного числа в массиве.
-    private int[] _array;               // Ссылка на актуальный массив.
+    private int _arrayMinSize = 1;      // Мінімальний розмір масиву.
+    private int _arrayMaxSize = 9999;   // Максимальний розмір масиву.
+    private int _arrayMinimum = 0;      // Мінімальне значення випадкового числа в масиві.
+    private int _arrayMaximum = 999;    // Максимальне значення випадкового числа в масиві.
+    private int[] _array;               // Посилання на актуальний масив.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Инициализация первоначального примера.
+        // Ініціалізація початкового прикладу.
         EditText editSize = (EditText) findViewById(R.id.editSize);
         editSize.setText("10");
         reCreateRandomArray(10);
     }
 
     /**
-     * Событие нажатия кнопки "СГЕНЕРИРОВАТЬ НОВЫЙ МАССИВ"
-     * Проверяет корректность введенных данных и запускает reCreateRandomArray(int size)
+     * Подія натискання кнопки "Згенерувати новий масив"
+     * Перевіряє правильність введених даних і запускає reCreateRandomArray(int size)
      */
     public void reCreateClick(View v) {
         EditText editSize = (EditText) findViewById(R.id.editSize);
@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
         if (sizeIsOk) {
             reCreateRandomArray(newArraySize);
         } else {
-            showToast("Введите размер массива в диапазоне от " +
-                    _arrayMinSize + " до " + _arrayMaxSize + " элементов.");
+            showToast("Введіть розмір масиву в діапазоні від " +
+                    _arrayMinSize + " до " + _arrayMaxSize + " елементів.");
         }
     }
 
     /**
-     * Событие нажатия кнопки "УДАЛИТЬ ЭЛЕМЕНТ"
-     * Проверяет корректность введенных данных и запускает removeElement(int position)
+     * Подія натискання кнопки "ВИДАЛИТИ ЕЛЕМЕНТ"
+     * Перевіряє правильність введених даних і запускає removeElement(int position)
      */
     public void removeElementClick(View v) {
         EditText editPosition = (EditText) findViewById(R.id.editPosition);
@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
         if (positionIsOk) {
             removeElement(position);
         } else {
-            showToast("Введите позицию для удаления в диапазоне от 1 до " + _array.length);
+            showToast("Введіть позицію для видалення в діапазоні від 1 до " + _array.length);
         }
     }
 
     /**
-     * Удаляет указанный по порядковому номеру элемент массива, и обновляет результат на форме.
+     * Видаляє вказаний за порядковим номером елемент масиву, і оновлює результат на формі.
      */
     private void removeElement(int position) {
         _array = ArrayLab.removeElement(_array, position);
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Генерирует новый массив со случайными числами, и обновляет результат на форме.
+     * Генерує новий масив з випадковими числами, і оновлює результат на формі.
      */
     private void reCreateRandomArray(int size) {
         _array = ArrayLab.createNewRandomArray(size, _arrayMinimum, _arrayMaximum);
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Обновляет представление массива на форме.
+     * Оновлює відображення масиву на формі.
      */
     private void updateArrayInfo() {
         TextView textArray = (TextView) findViewById(R.id.textArray);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Создает сообщение пользователю с указанным текстом.
+     * Створює повідомлення користувачу із зазначеним текстом.
      */
     private void showToast(String message) {
         Context context = getApplicationContext();

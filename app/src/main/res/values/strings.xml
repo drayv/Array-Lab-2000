@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ArrayLab</string>
-    <string name="array">Массив:</string>
+    <string name="array">Масив:</string>
     <string name="array_data">[1,2,3]</string>
-    <string name="delete_button">Удалить элемент</string>
-    <string name="delete_label">Удалить элемент №:</string>
-    <string name="new_array_button">Сгенерировать новый массив</string>
-    <string name="array_size">Размер массива:</string>
+    <string name="delete_button">Видалити елемент</string>
+    <string name="delete_label">Видалити елемент №:</string>
+    <string name="new_array_button">Згенерувати новий масив</string>
+    <string name="array_size">Розмір масиву:</string>
 </resources>
