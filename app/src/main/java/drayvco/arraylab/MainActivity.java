@@ -1,6 +1,7 @@
 package drayvco.arraylab;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Ініціалізація початкового прикладу.
         EditText editSize = (EditText) findViewById(R.id.editSize);
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Подія натискання кнопки "ВИДАЛИТИ ЕЛЕМЕНТ"
+     * Подія натискання кнопки "Видалити елемент"
      * Перевіряє правильність введених даних і запускає removeElement(int position)
      */
     public void removeElementClick(View v) {
